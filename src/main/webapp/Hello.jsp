@@ -17,7 +17,13 @@
               button.onclick = function() {
                   document.location.href='HelloWorld';
               };
+
+
           </script>
+          <form action="" method="GET">
+              <p>Введите имя пользователя: <input type="text" name="username"></p>
+              <input type="submit" value="Отправить" />
+          </form>
      </body>
   </html>
 
