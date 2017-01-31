@@ -20,7 +20,7 @@
 
 
           </script>
-          <form action="" method="GET">
+          <form action="" method="Post">
               <p>Введите имя пользователя: <input type="text" name="username"></p>
               <input type="submit" value="Отправить" />
           </form>
