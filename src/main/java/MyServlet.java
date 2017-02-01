@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,13 +21,12 @@ public class MyServlet extends HttpServlet {
         return res;    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        String username = (String) request.getParameter("username");
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        String rev=request.getParameter("str");
+        rev=reverse(rev);
 
-        response.setContentType("text/html;charset=UTF-8");
-        response.getWriter().println("<!DOCTYPE HTML>");
-        response.getWriter().println("<html><body><p>" +  username+"fuck" + "</p></body></html>");
-        response.getWriter().println(reverse("тут типа реверс"));
+        out.println("<h1>Hello, "+ rev +"</h1>");;
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
