@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@SuppressWarnings("serial")
 public class MyServlet extends HttpServlet {
 
 
@@ -25,7 +24,6 @@ public class MyServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String rev=request.getParameter("str");
         rev=reverse(rev);
-
         out.println("<h1>Hello, "+ rev +"</h1>");;
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
