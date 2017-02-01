@@ -1,36 +1,29 @@
+<!DOCTYPE HTML>
+<%@ page contentType="text/html; charset=windows-1251" %>
+<%@ page import="java.util.*, java.text.*" %>
 
-  <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
-  
-  <%@ page contentType="text/html; charset=windows-1251" %>
-  <%@ page import="java.util.*, java.text.*" %>
-  
-  <html>
-      <head> 
-          <title>JSP</title>
-          <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-     </head>
+<html>
 
-     <body>
-          JOPA <%= getFormattedDate () %>
-          <input type="button" id="button" value="Fuck my Ass" />
-          <script>
-              button.onclick = function() {
-                  document.location.href='HelloWorld';
-              };
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+
+<body>
+<form action="HelloWorld",  method="Get">
+    <p>Напиши свое имя: <input type="text" name="username"></p>
+
+<button> Ссылка на приветствие для тебя, метод гет</button>
+
+</form>
+    <form action="MyServlet",  method="post">
+        <p>Напиши свое имя:  <input type="text" name="str"></p>
+
+        <button>Ссылка на приветствие для тебя, метод пост с реверсом</button>
 
 
-          </script>
-          <form action="" method="Post">
-              <p>Введите имя пользователя: <input type="text" name="username"></p>
-              <input type="submit" value="Отправить" />
-          </form>
-     </body>
-  </html>
 
-  <%!
-     String getFormattedDate ()
-     {
-          SimpleDateFormat sdf = new SimpleDateFormat ("dd.MM.yyyy hh:mm:ss");
-          return sdf.format (new Date ());
-     }
-  %>
+    </form>
+</body>
+
+</html>
+
