@@ -13,17 +13,36 @@
     <p>Напиши свое имя: <input type="text" name="username"></p>
 
 <button> Ссылка на приветствие для тебя, метод гет</button>
-
 </form>
-    <form action="MyServlet",  method="post">
-        <p>Напиши свое имя:  <input type="text" name="str"></p>
-
-        <button>Ссылка на приветствие для тебя, метод пост с реверсом</button>
 
 
+    <p>Напиши свое имя:  <input type="text" name="str1" id="inp"></p>
 
-    </form>
+    <p><input value="Кнопка?" onclick="reverse()" type="button" />
+
+
+
+<div id="stus">Реверсированная строка</div>
+<script>
+
+    function reverse() {
+        var req = new XMLHttpRequest();
+        var statusElem = document.getElementById('stus');
+        req.open('Post', 'MyServlet', true);
+        var inputvalue=document.getElementById("inp").value.toString();
+        req.send(inputvalue); // отослать запрос
+
+        req.onreadystatechange = function() {
+
+                statusElem.innerHTML = req.responseText ;  //ответ
+
+            }
+        }
+       // statusElem.innerHTML = 'Ожидаю ответа ...'
+
+
+</script>
+
 </body>
-
 </html>
 
